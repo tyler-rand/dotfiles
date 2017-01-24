@@ -186,3 +186,6 @@ nnoremap <leader>= :wincmd =<cr>
 
 " set paste, paste, set nopaste
 map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
+
+" fzf fuzzy find
+nnoremap <C-p> :Files<cr>
