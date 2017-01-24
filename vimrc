@@ -159,10 +159,20 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
+" search case insensitive, until first capital used
+set ignorecase smartcase
+
+" Rename current file
+function! RenameFile()
+let old_name = expand('%')
+let new_name = input('New file name: ', expand('%'), 'file')
+if new_name != '' && new_name != old_name
+	exec ':saveas ' . new_name
+	exec ':silent !rm ' . old_name
+	redraw!
 endif
+endfunction
+map <Leader>n :call RenameFile()<cr>
 
 " Set color scheme
 colorscheme jellybeans
@@ -173,3 +183,6 @@ autocmd VimResized * :wincmd =
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
+
+" set paste, paste, set nopaste
+map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
