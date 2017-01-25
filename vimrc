@@ -189,3 +189,8 @@ map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
 
 " fzf fuzzy find
 nnoremap <C-p> :Files<cr>
+nnoremap <leader>df :Files ~/dotfiles<cr>
+nnoremap <leader>dc :Files app/controllers<cr>
+nnoremap <leader>dm :Files app/models<cr>
+nnoremap <leader>dv :Files app/views<cr>
+nnoremap <leader>ds :Files spec/<cr>
