@@ -143,12 +143,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-let g:syntastic_eruby_ruby_quiet_messages =
-    \ {"regex": "possibly useless use of a variable in void context"}
-
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
@@ -194,3 +188,44 @@ nnoremap <leader>dc :Files app/controllers<cr>
 nnoremap <leader>dm :Files app/models<cr>
 nnoremap <leader>dv :Files app/views<cr>
 nnoremap <leader>ds :Files spec/<cr>
+
+" atomic ctags
+function! s:CtagsAsync()
+  let job_id = async#job#start(['atomic-ctags'],
+    \ {
+    \   'on_exit': function('s:on_exit'),
+    \ })
+  endfunction
+command! CtagsAsync call <sid>CtagsAsync()
+
+function! s:on_exit(job_id, exit_code, _)
+  if a:exit_code != 0
+    echohl Error
+    echom 'Error running: ' . a:job_id . '; exit code: ' . a:exit_code
+    echohl None
+  endif
+endfunction
+
+augroup async_ctags
+  autocmd!
+  autocmd VimEnter * CtagsAsync
+  autocmd BufWritePost * CtagsAsync
+augroup END
+
+" ALE async linting
+let g:ale_linters = {
+\ 'javascript': ['eslint']
+\ }
+
+nmap <silent> [r <Plug>(ale_previous_wrap)
+nmap <silent> ]r <Plug>(ale_next_wrap)
+
+" Linting on all changes felt too aggressive. The below settings calls lint on
+" certain events, either when I stop interacting or when entering / leaving
+" insert mode
+set updatetime=1000
+autocmd CursorHold * call ale#Lint()
+autocmd CursorHoldI * call ale#Lint()
+autocmd InsertLeave * call ale#Lint()
+autocmd TextChanged * call ale#Lint()
+let g:ale_lint_on_text_changed = 0
