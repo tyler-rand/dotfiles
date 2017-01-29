@@ -189,29 +189,6 @@ nnoremap <leader>dm :Files app/models<cr>
 nnoremap <leader>dv :Files app/views<cr>
 nnoremap <leader>ds :Files spec/<cr>
 
-" atomic ctags
-function! s:CtagsAsync()
-  let job_id = async#job#start(['atomic-ctags'],
-    \ {
-    \   'on_exit': function('s:on_exit'),
-    \ })
-  endfunction
-command! CtagsAsync call <sid>CtagsAsync()
-
-function! s:on_exit(job_id, exit_code, _)
-  if a:exit_code != 0
-    echohl Error
-    echom 'Error running: ' . a:job_id . '; exit code: ' . a:exit_code
-    echohl None
-  endif
-endfunction
-
-augroup async_ctags
-  autocmd!
-  autocmd VimEnter * CtagsAsync
-  autocmd BufWritePost * CtagsAsync
-augroup END
-
 " ALE async linting
 let g:ale_linters = {
 \ 'javascript': ['eslint']
