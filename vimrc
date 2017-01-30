@@ -206,3 +206,6 @@ autocmd CursorHoldI * call ale#Lint()
 autocmd InsertLeave * call ale#Lint()
 autocmd TextChanged * call ale#Lint()
 let g:ale_lint_on_text_changed = 0
+
+" project notes
+nnoremap <leader>pn :e ./.project_notes<cr>
