@@ -10,7 +10,7 @@ alias b="bundle"
 
 # Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
-alias dropdb="bin/rake db:drop db:create db:migrate db:test:prepare"
+alias redb="bin/rake db:drop db:create db:migrate db:test:prepare"
 alias s="rails s"
 alias S="heroku local"
 alias dev="rails c"
