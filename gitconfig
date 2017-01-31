@@ -12,9 +12,7 @@
   co = checkout
   dc = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --cached --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
   df = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
-  pf = push --force-with-lease
-  st = status
-	sla = log --decorate --oneline --graph --all
+  sla = log --decorate --oneline --graph --all
   can = commit --amend --no-edit
 [core]
   excludesfile = ~/.gitignore
@@ -30,5 +28,5 @@
 [include]
   path = ~/.gitconfig.local
 [user]
-	name = Tyler Rand
-	email = tyler@tyler-rand.com
+  name = Tyler Rand
+  email = tyler@tyler-rand.com
