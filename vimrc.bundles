@@ -32,6 +32,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'fatih/vim-go'
 Plug 'janko-m/vim-test'
+Plug 'nelstrom/vim-visual-star-search'
 Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.6' }
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'kchmck/vim-coffee-script'
