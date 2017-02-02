@@ -8,17 +8,33 @@ onoremap <C-@> <Esc>
 cnoremap <C-@> <C-c>
 inoremap <C-@> <Esc>
 
-set backspace=2   " Backspace deletes like most programs in insert mode
+set backspace=2    " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile     " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set hlsearch      " highlight all matches after entering search pattern
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
+set ruler          " show the cursor position all the time
+set showcmd        " display incomplete commands
+set incsearch      " do incremental searching
+set hlsearch       " highlight all matches after entering search pattern
+set laststatus=2   " Always display the status line
+set autowrite      " Automatically :write before running commands
+set textwidth=80
+set colorcolumn=+1 " Make it obvious where 80 characters is
+set number
+set relativenumber
+set numberwidth=5
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+set nojoinspaces   " Use one space, not two, after punctuation.
+set splitbelow     " new splits to bottom, feels more natural
+set splitright     " new splits to right, feels more natural
+set complete+=kspell " Autocomplete with dictionary words when spell which is on
+set diffopt+=vertical " Always use vertical diffs
+set ignorecase smartcase " search case insensitive, until first capital used
+set scrolloff=5    " scroll before hitting bottom of screen
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -58,17 +74,8 @@ augroup END
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
 
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
-
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
-
-" Use one space, not two, after punctuation.
-set nojoinspaces
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
@@ -86,15 +93,6 @@ if executable('ag')
     nnoremap \ :Ag<SPACE>
   endif
 endif
-
-" Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
-
-" Numbers
-set number
-set relativenumber
-set numberwidth=5
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -141,10 +139,6 @@ nnoremap <Leader>r :RunInInteractiveShell<space>
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -154,15 +148,6 @@ nnoremap <C-l> <C-w>l
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
-
-" Autocomplete with dictionary words when spell check is on
-set complete+=kspell
-
-" Always use vertical diffs
-set diffopt+=vertical
-
-" search case insensitive, until first capital used
-set ignorecase smartcase
 
 " Rename current file
 function! RenameFile()
@@ -217,6 +202,3 @@ let g:ale_lint_on_text_changed = 0
 
 " project notes
 nnoremap <leader>pn :e ./.project_notes<cr>
-
-" scroll before bottom
-set scrolloff=5
