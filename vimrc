@@ -60,9 +60,9 @@ augroup vimrcEx
   " Don't do it for commit messages, when the position is invalid, or when
   " inside an event handler (happens when dropping a file on gvim).
   autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+        \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
 
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
@@ -99,12 +99,12 @@ endif
 " will use completion if not at beginning
 set wildmode=list:longest,list:full
 function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
@@ -151,13 +151,13 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Rename current file
 function! RenameFile()
-let old_name = expand('%')
-let new_name = input('New file name: ', expand('%'), 'file')
-if new_name != '' && new_name != old_name
-	exec ':saveas ' . new_name
-	exec ':silent !rm ' . old_name
-	redraw!
-endif
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
 endfunction
 map <Leader>n :call RenameFile()<cr>
 
@@ -167,9 +167,13 @@ colorscheme jellybeans
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
+" (Neither of these works as zoom, and rebalance is happening passively)
 " zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
+" nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+" nnoremap <leader>= :wincmd =<cr>
+
+" Reindent entire buffer
+nnoremap <leader>= mmggVG=`m<cr>
 
 " set paste, paste, set nopaste
 map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
@@ -184,8 +188,8 @@ nnoremap <leader>ds :Files spec/<cr>
 
 " ALE async linting
 let g:ale_linters = {
-\ 'javascript': ['eslint']
-\ }
+      \ 'javascript': ['eslint']
+      \ }
 
 nmap <silent> [r <Plug>(ale_previous_wrap)
 nmap <silent> ]r <Plug>(ale_next_wrap)
@@ -202,3 +206,4 @@ let g:ale_lint_on_text_changed = 0
 
 " project notes
 nnoremap <leader>pn :e ./.project_notes<cr>
+
