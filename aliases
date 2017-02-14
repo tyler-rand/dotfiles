@@ -15,6 +15,9 @@ alias s="rails s"
 alias S="heroku local"
 alias dev="rails c"
 
+# Tmux
+alias tmus="tmux" # why can't I type tmux...
+
 # Puma
 alias pkp="pkill puma"
 
