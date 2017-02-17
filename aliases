@@ -21,6 +21,9 @@ alias tmus="tmux" # why can't I type tmux...
 # Puma
 alias pkp="pkill puma"
 
+# Redis
+alias rflush="echo 'FLUSHALL' | redis-cli"
+
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
