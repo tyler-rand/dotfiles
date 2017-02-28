@@ -207,3 +207,10 @@ let g:ale_lint_on_text_changed = 0
 " project notes
 nnoremap <leader>pn :e ./.project_notes<cr>
 
+" highlight cursor line
+hi CursorLine ctermbg=16
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
