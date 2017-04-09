@@ -4,6 +4,7 @@
 .project_notes
 .byebug_history
 .env
+.env.local
 db/*.sqlite3
 log/*.log
 rerun.txt
