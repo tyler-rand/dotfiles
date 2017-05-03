@@ -12,4 +12,7 @@ PATH=".git/safe/../../bin:$PATH"
 # load elixir
 PATH="/usr/local/bin/elixir/$PATH"
 
+# GO
+PATH="/Users/tylerrand/zzcode/go/bin:$PATH"
+
 export -U PATH
