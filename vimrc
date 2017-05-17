@@ -187,6 +187,9 @@ nnoremap <leader>= mmggVG=`m<cr>
 map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
 
 " fzf fuzzy find
+let g:fzf_files_options =
+  \ '--reverse ' .
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>df :Files ~/dotfiles<cr>
 nnoremap <leader>dc :Files app/controllers<cr>
