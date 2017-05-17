@@ -12,6 +12,10 @@ inoremap <C-@> <Esc>
 nmap j gj
 nmap k gk
 
+" Swap 0 and ^. I tend to want to jump to the first non-whitespace character
+nnoremap 0 ^
+nnoremap ^ 0
+
 set backspace=2    " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
