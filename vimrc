@@ -8,6 +8,10 @@ onoremap <C-@> <Esc>
 cnoremap <C-@> <C-c>
 inoremap <C-@> <Esc>
 
+" Move between wrapped lines, rather than jumping over wrapped segments
+nmap j gj
+nmap k gk
+
 set backspace=2    " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
