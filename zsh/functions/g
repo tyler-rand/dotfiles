@@ -1,9 +1,9 @@
 # No arguments: `git status`
-# With arguments: acts like `git`
+# With arguments: acts like 'hub' (which acts like `git`)
 g() {
   if [[ $# -gt 0 ]]; then
-    git "$@"
+    hub "$@"
   else
-    git status
+    hub status
   fi
 }
