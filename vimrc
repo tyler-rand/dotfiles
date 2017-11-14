@@ -189,7 +189,7 @@ autocmd VimResized * :wincmd =
 nnoremap <leader>= mmggVG=`m<cr>
 
 " set paste, paste, set nopaste
-map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>
+map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>:retab<cr>
 
 " fzf fuzzy find
 let g:fzf_files_options =
