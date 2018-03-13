@@ -22,10 +22,12 @@ alias dev="rails c"
 alias tmus="tmux" # why can't I type tmux...
 
 # Puma
-alias pkp="pkill puma"
+alias pkp="pkill -l puma"
 
 # Redis
 alias rflush="echo 'FLUSHALL' | redis-cli"
+alias redstart="redis-server --daemonize yes"
+alias redstop="pkill -l redis-server"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
