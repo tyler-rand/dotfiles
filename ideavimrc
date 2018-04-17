@@ -1,16 +1,20 @@
 " Leader
 let mapleader = " "
 
-" Terminal sees <C-@> as <C-space>
-nnoremap <C-@> <Esc>:noh<CR>
-vnoremap <C-@> <Esc>gV
-onoremap <C-@> <Esc>
-cnoremap <C-@> <C-c>
-inoremap <C-@> <Esc>
+" supported plugin
+set surround
 
-" Move between wrapped lines, rather than jumping over wrapped segments
-nmap j gj
-nmap k gk
+set incsearch      " do incremental searching
+set hlsearch       " highlight all matches after entering search pattern
+set ignorecase smartcase " search case insensitive, until first capital used
+set scrolloff=5    " scroll before hitting bottom of screen
+
+" unlike terminal, intellij views c-space as c-space instead of c-@
+nnoremap <C-space> <Esc>:noh<CR>
+vnoremap <C-space> <Esc>gV
+onoremap <C-space> <Esc>
+cnoremap <C-space> <C-c>
+inoremap <C-space> <Esc>
 
 " Swap 0 and ^. I tend to want to jump to the first non-whitespace character
 nnoremap 0 ^
