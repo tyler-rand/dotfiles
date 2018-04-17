@@ -1,0 +1,17 @@
+" Leader
+let mapleader = " "
+
+" Terminal sees <C-@> as <C-space>
+nnoremap <C-@> <Esc>:noh<CR>
+vnoremap <C-@> <Esc>gV
+onoremap <C-@> <Esc>
+cnoremap <C-@> <C-c>
+inoremap <C-@> <Esc>
+
+" Move between wrapped lines, rather than jumping over wrapped segments
+nmap j gj
+nmap k gk
+
+" Swap 0 and ^. I tend to want to jump to the first non-whitespace character
+nnoremap 0 ^
+nnoremap ^ 0
