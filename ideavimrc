@@ -28,3 +28,13 @@ nnoremap cil ^C
 nnoremap cal ^C
 nnoremap dil ^D
 nnoremap dal ^D
+
+nnoremap <leader>n :action RenameFile<cr>
+nnoremap + :action ToggleDistractionFreeMode<CR>
+nnoremap gcc :action CommentByLineComment<cr>
+
+" window movement
+nnoremap <silent> <C-h> <C-w>h<CR>
+nnoremap <silent> <C-j> <C-w>j<CR>
+nnoremap <silent> <C-k> <C-w>k<CR>
+nnoremap <silent> <C-l> <C-w>l<CR>
