@@ -4,10 +4,13 @@ let mapleader = " "
 " supported plugin
 set surround
 
+" niceties
 set incsearch      " do incremental searching
 set hlsearch       " highlight all matches after entering search pattern
 set ignorecase smartcase " search case insensitive, until first capital used
 set scrolloff=5    " scroll before hitting bottom of screen
+set number
+set relativenumber
 
 " unlike terminal, intellij views c-space as c-space instead of c-@
 nnoremap <C-space> <Esc>:noh<CR>
@@ -19,3 +22,9 @@ inoremap <C-space> <Esc>
 " Swap 0 and ^. I tend to want to jump to the first non-whitespace character
 nnoremap 0 ^
 nnoremap ^ 0
+
+" recreate common vim-textobj-line commands
+nnoremap cil ^C
+nnoremap cal ^C
+nnoremap dil ^D
+nnoremap dal ^D
