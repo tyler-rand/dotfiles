@@ -16,7 +16,7 @@ alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
 alias redb="bin/rake db:drop db:create db:migrate db:test:prepare"
 alias restruct="bundle exec bin/rails db:drop db:create db:structure:load db:seed"
 alias s="rails s"
-alias S="heroku local"
+alias S="bundle exec thin start -a 127.0.0.1 --threaded"
 alias dev="rails c"
 
 # Tmux
