@@ -18,6 +18,7 @@ alias restruct="bundle exec bin/rails db:drop db:create db:structure:load db:see
 alias s="rails s"
 alias S="bundle exec thin start -a 127.0.0.1 --threaded"
 alias dev="rails c"
+alias wp="bin/webpack-dev-server"
 
 # Tmux
 alias tmus="tmux" # why can't I type tmux...
