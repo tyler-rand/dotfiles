@@ -58,6 +58,7 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
+Plug 'heavenshell/vim-jsdoc'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
