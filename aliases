@@ -36,6 +36,3 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
-
-# Piranha
-alias refish=="dropdb piranha && createdb piranha && sbt \"run db init\" && echo 'CREATE EXTENSION IF NOT EXISTS citext;' | psql piranha && sbt \"run db migrations\""
