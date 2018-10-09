@@ -13,6 +13,9 @@ PATH=".git/safe/../../bin:$PATH"
 PATH="/usr/local/bin/elixir/$PATH"
 
 # GO
-PATH="/Users/tylerrand/zzcode/go/bin:$PATH"
+PATH="$GOPATH/bin:$PATH"
+
+# GOPATH
+export GOPATH=~/go
 
 export -U PATH
