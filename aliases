@@ -17,7 +17,7 @@ alias redb="bin/rake db:drop db:create db:migrate db:test:prepare"
 alias restruct="bundle exec bin/rails db:drop db:create db:structure:load db:seed" # different from db:reset in that it does db:structure:load vs db:schema:load
 alias s="rails s"
 alias S="bundle exec thin start -a 127.0.0.1 --threaded"
-alias dev="rails c"
+alias dev="bundle exec rails c"
 alias wp="bin/webpack-dev-server"
 
 # Tmux
