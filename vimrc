@@ -214,10 +214,10 @@ nmap <silent> ]r <Plug>(ale_next_wrap)
 " certain events, either when I stop interacting or when entering / leaving
 " insert mode
 set updatetime=1000
-autocmd CursorHold * call ale#Lint()
-autocmd CursorHoldI * call ale#Lint()
-autocmd InsertLeave * call ale#Lint()
-autocmd TextChanged * call ale#Lint()
+autocmd CursorHold * call ale#Queue(0)
+autocmd CursorHoldI * call ale#Queue(0)
+autocmd InsertLeave * call ale#Queue(0)
+autocmd TextChanged * call ale#Queue(0)
 let g:ale_lint_on_text_changed = 0
 
 " project notes
