@@ -18,3 +18,5 @@ bindkey "^Q" push-line-or-edit
 bindkey "^[B" backward-word
 bindkey "^[F" forward-word
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
+
+bindkey -r "^S" # get outta here zsh, this is tmux's keybind
