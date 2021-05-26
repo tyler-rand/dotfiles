@@ -195,7 +195,10 @@ map <Leader>p :set paste<CR><esc>"*]p:set nopaste<cr>:retab<cr>
 let g:fzf_files_options =
   \ '--reverse ' .
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+let g:fzf_layout = { 'down': '~50%' }
 nnoremap <C-p> :Files<cr>
+let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
+
 nnoremap <leader>df :Files ~/dotfiles<cr>
 nnoremap <leader>dc :Files app/controllers<cr>
 nnoremap <leader>dm :Files app/models<cr>
