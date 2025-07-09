@@ -28,6 +28,7 @@ call plug#begin('~/.vim/bundle')
 
 " Define bundles via Github repos
 Plug 'Chiel92/vim-autoformat'
+Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-run-interactive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
