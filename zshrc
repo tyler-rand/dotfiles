@@ -47,18 +47,6 @@ _load_settings "$HOME/.zsh/configs"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# needed for gpg and git to behave nicely.
-# see:https://github.com/pstadler/keybase-gpg-github#optional-setting-up-tty
-if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
-  source ~/.gnupg/.gpg-agent-info
-  export GPG_AGENT_INFO
-else
-  eval $(gpg-agent --daemon ~/.gnupg/.gpg-agent-info)
-fi
-
-GPG_TTY=$(tty)
-export GPG_TTY
-
 # start tmux with terminal
 _not_inside_tmux() {
   [[ -z "$TMUX" ]]
