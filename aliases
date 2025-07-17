@@ -35,7 +35,7 @@ alias redstop="pkill -l redis-server"
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # Backlog tasks list view
-alias blt="backlog tasks list"
+alias blt="git pull && backlog tasks list"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
