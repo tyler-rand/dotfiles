@@ -8,9 +8,6 @@ alias v="$VISUAL"
 # Bundler
 alias b="bundle"
 
-# Hub
-alias git="hub"
-
 # Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
 alias redb="bin/rake db:drop db:create db:migrate db:test:prepare"

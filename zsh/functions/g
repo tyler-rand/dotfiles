@@ -1,9 +1,14 @@
 # No arguments: `git status`
-# With arguments: acts like 'hub' (which acts like `git`)
+# For certain gh CLI arguments: behave like gh CLI
+# If git, behave like git
 g() {
   if [[ $# -gt 0 ]]; then
-    hub "$@"
+    if [[ $1 == "oc" ]]; then # "g oc <sha>" for open commit
+      gh browse $2
+    else
+      git "$@"
+    fi
   else
-    hub status
+    git status
   fi
 }
