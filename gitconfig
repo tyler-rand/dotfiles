@@ -17,6 +17,7 @@
   df = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
   fall = fetch --all
   glog = log -E -i --grep
+  pul = pull
   rbc = rebase --continue
   sl = log --oneline --decorate -20
   sla = log --decorate --oneline --graph --all
