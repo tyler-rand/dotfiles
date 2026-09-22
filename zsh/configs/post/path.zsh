@@ -12,8 +12,8 @@ PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # mkdir .git/safe in the root of repositories you trust
 PATH=".git/safe/../../bin:$PATH"
 
-# load elixir
-PATH="/usr/local/bin/elixir/$PATH"
+# for claude
+PATH="$HOME/.local/bin:$PATH"
 
 # GO
 PATH="$GOPATH/bin:$PATH"

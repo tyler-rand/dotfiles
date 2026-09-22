@@ -15,3 +15,5 @@ tmp/**/*
 !tmp/cache/.keep
 *.pyc
 node_modules/
+
+**/.claude/settings.local.json
