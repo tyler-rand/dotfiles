@@ -8,6 +8,9 @@ alias v="$VISUAL"
 # Bundler
 alias b="bundle"
 
+# Git-related but not gitconfig
+alias gcmp="g co main && g pull"
+
 # Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
 alias redb="bin/rake db:drop db:create db:migrate db:test:prepare"
